@@ -48,7 +48,7 @@ class App
         $this->loop = $loop = \React\EventLoop\Factory::create();
 
         $dnsResolverFactory = new \React\Dns\Resolver\Factory();
-        $this->resolver = $dns = $dnsResolverFactory->createCached('8.8.8.8', $loop);
+        $this->resolver = $dns = $dnsResolverFactory->createCached('10.3.0.1', $loop);
 
         $this->via = new ConnectionManagerSelective();
         $this->via->addConnectionManagerFor($this->createConnectionManager('none'), '*', '*', self::PRIORITY_DEFAULT);
